@@ -1,5 +1,7 @@
 import { React } from 'react';
-import { useState } from 'react'; 
+import { useState } from 'react';
+
+import Nav from '../Nav/Nav.jsx';
 
 const Home = () => {
 
@@ -9,7 +11,7 @@ const Home = () => {
     return(
         <div>
             <header>
-
+                <Nav/>
             </header>
 
             <main>

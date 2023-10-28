@@ -1,12 +1,12 @@
 import React from "react";
 import { Route, Routes , BrowserRouter } from "react-router-dom";
 
-import Home from "./Bolseiro/Home";
-import Cadastro from "./Bolseiro/Cadastro";
-import Login from "./Bolseiro/Login";
-import Perfil from './Bolseiro/Perfil'
+import Home from "./Bolseiro/Home/Home";
+import Cadastro from "./Bolseiro/Cadastro/Cadastro";
+import Login from "./Bolseiro/Login/Login";
+import Perfil from './Bolseiro/Perfil/Perfil'
 
-function Routesra(){
+function AppRoutes(){
    return(
     <div>
         <div>
@@ -23,4 +23,4 @@ function Routesra(){
    )
 }
 
-export default Routesra;
+export default AppRoutes;
