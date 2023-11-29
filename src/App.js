@@ -1,10 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
-import Cadastro from './bolseiro/cadastro';
+import Cadastro from './Bolseiro/Cadastro';
 
 function App() {
   return (
-   <Cadastro/>
+    <div className='App'>
+    <Cadastro/>
+    </div>
   );
 }
 
