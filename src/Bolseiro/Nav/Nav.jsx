@@ -7,10 +7,11 @@ import Lupa from './lupa.png';
 
 function Nav() {
 
+    const navigate = useNavigate();
     const [search, setSearch] = useState();
 
     const SearchBook = async (search) => {
-        HandleClick(search);
+
         try{
             await axios.get(`http://localhost:3000/book/findName?name=${search}`)
             .then(res => {
@@ -23,11 +24,11 @@ function Nav() {
         catch(error) {
             console.log("Erro na requisição: ",error);
         }
-
+        HandleClick(search);
     }
 
     function HandleClick(search) {
-        useNavigate(`/home`);
+        navigate(`/livro?name=${search}`);
     }
 
     return(
