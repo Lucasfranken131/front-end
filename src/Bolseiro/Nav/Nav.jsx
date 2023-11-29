@@ -9,8 +9,13 @@ const Nav = () => {
     const navigate = useNavigate();
 
     const HandleClick = (search) => {
-        navigate(`/search?name=${search}`);
-        window.location.reload(true);
+        try {
+            navigate(`/search?name=${search}`);
+            window.location.reload(true);
+        }
+        catch (error) {
+            console.log("Erro de requisição: ",error)
+        }
     }
 
     const sendHome = () => {

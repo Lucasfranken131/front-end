@@ -4,12 +4,13 @@ import axios from 'axios';
 
 import Nav from '../Nav/Nav.jsx';
 import './Home.css';
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
 
     const [items, setItems] = useState([]);
     const [dataLength, setDataLength] = useState();
-
+    const navigate = useNavigate();
 
     const FetchData = async () => {
         try {
@@ -46,14 +47,10 @@ const Home = () => {
         <div className='books'>
             {items.map(item => (
                 <React.Fragment key={item.id_book}> 
-                        <div className='book'>
+                        <div className='book' onClick={() => navigate(`/livro?id=${item.id_book}`)}>
                             <div><img src={item.book_picture} alt=" Profile" width="150px" height="200px"/></div>
                             <div>{item.book_name}</div>
-                            <div>{item.book_author}</div>
-                            <div>{item.book_date}</div>
-                            <div>{item.book_publisher}</div>
                         </div>
-                    
                 </React.Fragment>
             ))}
             </div>
