@@ -1,38 +1,25 @@
 import { useNavigate } from "react-router-dom";
 import React, { useState } from 'react';
-import axios from 'axios';
 
 import './Nav.css';
 import Lupa from './lupa.png';
 
-function Nav() {
+const Nav = () => {
 
     const navigate = useNavigate();
-    const [search, setSearch] = useState();
 
-    const SearchBook = async (search) => {
-
-        try{
-            await axios.get(`http://localhost:3000/book/findName?name=${search}`)
-            .then(res => {
-                const response = res.data;
-                console.log("Livro:", search);
-                setSearch(response);
-                console.log("Dados recebidos: ", response);
-            });
-        }
-        catch(error) {
-            console.log("Erro na requisição: ",error);
-        }
-        HandleClick(search);
+    const HandleClick = (search) => {
+        navigate(`/search?name=${search}`);
+        window.location.reload(true);
     }
 
-    function HandleClick(search) {
-        navigate(`/livro?name=${search}`);
+    const sendHome = () => {
+        navigate("/")
     }
 
     return(
         <div className="Nav-bar">
+            <div id="home" onClick={() => sendHome()}>Bolseiro</div>
             <input type="text" id="search-bar" placeholder="Pesquise o livro que quiser"/>
             <button id="search-button">
                 <img src={Lupa} onClick={() => HandleClick(document.getElementById('search-bar').value)} alt="lupa" id="lupa"/>

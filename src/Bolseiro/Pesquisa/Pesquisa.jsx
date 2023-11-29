@@ -1,19 +1,21 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useState, useEffect } from 'react';
 
-import Nav from '../Nav/Nav.jsx';
-import './Home.css';
+import Nav from '../Nav/Nav';
 
-const Home = () => {
-
-    const [items, setItems] = useState([]);
-    const [dataLength, setDataLength] = useState();
+const Pesquisa = () => {
 
 
-    const FetchData = async () => {
+    const [ items, setItems ] = useState([]);
+    const [dataLength, setDataLength] = useState(0);
+
+    const queryParameters = new URLSearchParams(window.location.search);
+    const name = queryParameters.get("name");
+  
+    const fetchData = async () => {
         try {
-            await axios.get(`http://localhost:3000/book/findAll/`)
+            await axios.get(`http://localhost:3000/book/findName?name=${name}`)
             .then(res => {
                 const response = res.data;
                 console.log("Dados recebidos:", response);
@@ -37,28 +39,27 @@ const Home = () => {
     };
 
     useEffect(() => {
-        FetchData();
+        fetchData();
     }, []);
-
+    
     return(
         <div>
-        <Nav />
-        <div className='books'>
-            {items.map(item => (
-                <React.Fragment key={item.id_book}> 
+            <Nav/>
+            <div className='books'>
+                {items.map(item => (
+                    <React.Fragment key = {item.id_book}>
                         <div className='book'>
-                            <div><img src={item.book_picture} alt=" Profile" width="150px" height="200px"/></div>
+                            <div><img src={item.book_picture} alt="Livro" width="150px" height="200px"/></div>
                             <div>{item.book_name}</div>
                             <div>{item.book_author}</div>
                             <div>{item.book_date}</div>
                             <div>{item.book_publisher}</div>
                         </div>
-                    
-                </React.Fragment>
-            ))}
+                    </React.Fragment>
+                ))}
             </div>
         </div>
     )
-};
+}
 
-export default Home;
+export default Pesquisa;

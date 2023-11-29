@@ -24,6 +24,11 @@
     border-bottom-right-radius: 20px;
 }
 
+#home {
+    font-size: 35px;
+    color: white;
+    padding-right: 20px;
+}
 
 #lupa {
     width: 30px;
