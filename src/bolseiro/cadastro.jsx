@@ -1,13 +1,30 @@
-import { useState } from "react";
-import "./Cadastro.css"
-const Cadastro = () =>{
-    const registrar = async(first_name, last_name, username, email, password) => {
-        console.log(first_name)
-        console.log(last_name)
-        console.log(username)
-        console.log(email)
-        console.log(password)
+import "./Cadastro.css";
+import axios from "axios";
+
+const Cadastro = () => {
+
+    const registrar = async (firstName, lastName, username, email, password) => {
+      
+      try {
+        const post_data = {
+          profile_picture: "https://christopherscottedwards.com/wp-content/uploads/2018/07/Generic-Profile.jpg",
+          first_name: firstName,
+          last_name: lastName,
+          username: username,
+          email: email,
+          password: password
+        };
+        
+        await axios.post('http://localhost:3000/profile/createUser', post_data)
+        .then(res => {
+          console.log(res);
+        });
+      }
+      catch(error) {
+        console.log(error);
+      };
     }
+
     function validateFormData(firstName, lastName, username, email, password) {
         const errors = [];
       
