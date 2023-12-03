@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-
+import './livro.css';
 import Nav from '../Nav/Nav';
 
 const Livro = () => {
@@ -30,12 +30,18 @@ const Livro = () => {
     return(
         <div>
             <Nav/>
-            <div className='book'>
-                <div><img src={book.book_picture} alt=" Profile" width="150px" height="200px"/></div>
-                <div>{book.book_name}</div>
-                <div>{book.book_author}</div>
-                <div>{book.book_date}</div>
-                <div>{book.book_publisher}</div>
+            <div id='book'>
+            <div className='book-image'>
+                <div><img src={book.book_picture} alt=" Profile" width="300px" height="450px"/></div>
+            </div>
+            <div className='book-info'>
+                <h1><div>{book.book_name}</div></h1><hr/>
+                <div>Autor: {book.book_author}</div>
+                <div>Data de Publicação: {book.book_date}</div>
+                <div>Editora: {book.book_publisher}</div>
+                <div>Descrição: {book.book_description}</div>
+                <div><button onClick={() => window.open(book.pdf_link)}>Leitura</button></div>
+            </div>
             </div>
         </div>
     )
