@@ -1,23 +1,28 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-
+import Cookies from 'js-cookie';
 import Nav from '../Nav/Nav';
 
 const Perfil = () => {
 
-    const [ perfil, setPerfil ] = useState([])
+    const [ perfil, setPerfil ] = useState([]);     
+    const queryParameters = new URLSearchParams(window.location.search);
+    const id = queryParameters.get("user");
 
     const FetchData = async () => {
-        await axios.get(`http://localhost:3000/profile/findUser/1`)
-        .then(res => {
-            const response = res.data;
-            setPerfil(response); 
-        });
+        try {
+            const response = await axios.get(`http://localhost:3000/profile/findUser/${id}`);
+            console.log(response);
+            setPerfil(response.data);
+        }
+        catch (error) {
+            console.error("Erro na solicitação:", error);
+        }
     }
 
     useEffect(() => {
         FetchData();
-    }, [])
+    }, []);
 
     return(
         <div>
@@ -26,7 +31,7 @@ const Perfil = () => {
 
                 <img width="100" height="100" src={perfil.profile_picture} alt="perfil"></img>
 
-                <div class="info">      
+                <div className="info">      
                     <div>
                         {perfil.username}
                     </div>
@@ -40,19 +45,19 @@ const Perfil = () => {
                     </div>
                 </div>
 
-                <div class="grupo-campos">
+                <div className="grupo-campos">
                     <div hidden={true}>
-                        <label for="Sobrenome">Nome:</label>
+                        Nome:
                         <input type="text" id="Nome"/>
                     </div>
 
                     <div hidden={true}>
-                        <label for="Sobrenome">Sobrenome:</label>
+                        Sobrenome:
                         <input type="text" id="nome"/>
                     </div>
 
                     <div hidden={true}>
-                        <label for="senha">Gênero:</label>
+                        Gênero:
                         <input type="password" id="senha" />
                     </div>
 

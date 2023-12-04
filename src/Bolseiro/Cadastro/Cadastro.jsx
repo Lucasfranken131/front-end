@@ -22,6 +22,8 @@ const Cadastro = () => {
         await axios.post('http://localhost:3000/profile/createUser', post_data)
         .then(res => {
           console.log(res);
+          sessionStorage.setItem("email", email);
+          sessionStorage.setItem("password", password);
         });
       }
       catch(error) {
@@ -90,6 +92,7 @@ const Cadastro = () => {
               <input type="text" id="email" placeholder="seuemail@hotmail.com" required/>
               <input type="password" minLength="8" maxLength="16" id="password" placeholder="senha" required/>
               <input id="submit"type="submit" onClick={() => validateFormData(document.getElementById('first_name').value, document.getElementById('last_name').value, document.getElementById('username').value, document.getElementById('email').value, document.getElementById('password').value)} />
+              <div onClick={() => navigate("/login")} id='onclick-div'>Já possui uma conta? <u>Entrar</u></div>
           </div>
           </div>
         </div>

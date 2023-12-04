@@ -16,7 +16,7 @@ function AppRoutes(){
                 <Routes>
                     <Route element = { <Cadastro/> }  path="/cadastro" />
                     <Route element = { <Login/> }  path="/login" />
-                    <Route element = { <Home/> }  path="/" exact />
+                    <Route element = { <Home/> }  path="/home" exact />
                     <Route element = { <Perfil/> } path="/perfil" />
                     <Route element = { <Livro/> } path="/livro" />
                     <Route element = { <Pesquisa/> } path="/search" />
