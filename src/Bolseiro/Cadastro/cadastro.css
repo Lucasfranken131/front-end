@@ -28,3 +28,16 @@
 u {
     color: rgb(38, 38, 199);
 }
+
+.Nav-bar {
+    display: flex;
+    flex-direction: row;
+    height: 80px; /* Ajuste a altura conforme necessário */
+    background-color: #B85E5E;
+    align-items: center;
+    position: fixed;
+    width: 100%; /* Ocupa toda a largura */
+    top: 0; /* Garante que a barra comece no topo da página */
+}
+
+/* Restante do seu CSS permanece inalterado */

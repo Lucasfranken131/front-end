@@ -79,7 +79,7 @@ const Cadastro = () => {
       }
     return(
         <div>
-          <div className="Nav-bar">
+          <div className="Nav-bar-locked">
             <div id="home">Bolseiro</div>
           </div>
 

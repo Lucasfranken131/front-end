@@ -7,6 +7,7 @@ import Login from "./Bolseiro/Login/Login";
 import Perfil from './Bolseiro/Perfil/Perfil';
 import Livro from './Bolseiro/Livro/Livro';
 import Pesquisa from './Bolseiro/Pesquisa/Pesquisa';
+import Index from './Bolseiro/Index/Index';
 
 function AppRoutes(){
    return(
@@ -14,6 +15,7 @@ function AppRoutes(){
         <div>
             <BrowserRouter>
                 <Routes>
+                    <Route element = { <Index/> } path="/" />
                     <Route element = { <Cadastro/> }  path="/cadastro" />
                     <Route element = { <Login/> }  path="/login" />
                     <Route element = { <Home/> }  path="/home" exact />
