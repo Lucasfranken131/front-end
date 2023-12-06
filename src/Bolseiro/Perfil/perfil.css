@@ -1,0 +1,44 @@
+.quadro {
+    margin-top: 150px;
+    
+}#perfil-container {
+    display: flex;
+    justify-content: center;
+    height: auto; /* Para centralizar verticalmente */
+}
+
+#perfil-img {
+    width: 120px;
+    height: 100px;
+    margin-left: 20px;
+}
+
+#perfil-info {
+    color: black;
+    border: 2px solid #848484;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    width: 700px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.info-item {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.label {
+    display: block;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.info-item span {
+    display: block;
+    margin-top: 10px; /* Espaçamento entre a label e o conteúdo */
+    /* Adicione outros estilos conforme necessário */
+}

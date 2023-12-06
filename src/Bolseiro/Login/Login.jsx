@@ -7,20 +7,24 @@ import { useState } from 'react';
 function Login(){
 
     const navigate = useNavigate();
-    const [ perfil, setPerfil ] = useState([])
 
     const login = async (username, password) => {
         try {
-            await axios.get(`http://localhost:3000/profile/login?email=${username}&password=${password}`)
+            await axios.get(`http://localhost:3000/profile/login?username=${username}&password=${password}`)
             .then(res => {
                 const response = res.data;
                 const user = res.data[0];
                 const userId = user.id_user;
                 console.log("Usuário: ", user);
                 console.log("userId:", userId);
-                console.log(Cookies.set("id", userId));
+                const now = new Date();
+                const expirationTime = new Date(now.getTime() + 60 * 60 * 1000);
+                console.log(Cookies.set("id", userId, { expires: expirationTime }));
                 console.log(response);
                 navigate(`/home`);
+            })
+            .catch(error => {
+                console.log("Não foi possível se Logar.", error);
             });
         } catch (error) {
             console.log("Deu erro aqui:", error)
@@ -30,7 +34,7 @@ function Login(){
     return (
         <div>
             <div className="Nav-bar">
-                <div id="home">Bolseiro</div>
+                <div id="home" onClick={() => navigate("/")}>Bolseiro</div>
             </div>
             <div className='background'>  
                 <div className="login">

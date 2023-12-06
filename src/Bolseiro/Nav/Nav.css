@@ -43,3 +43,7 @@
     border: solid black 1px;
     border-radius: 80px;
 }
+
+#sair {
+    margin-left: 10px;
+}

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import './perfil.css';
 import axios from 'axios';
 import Cookies from 'js-cookie';
 import Nav from '../Nav/Nav';
@@ -27,21 +28,27 @@ const Perfil = () => {
     return(
         <div>
             <Nav/>           
-            <div id="quadro">
+            <div className="quadro">
 
-                <img width="100" height="100" src={perfil.profile_picture} alt="perfil"></img>
+                <div id="perfil-container">
+                    
+                    <img id="perfil-img" src={perfil.profile_picture} alt="perfil" />
 
-                <div className="info">      
-                    <div>
-                        {perfil.username}
-                    </div>
+                    <div id="perfil-info" className="info">      
+                        <div className="info-item">
+                            <span className="label">Username:</span>
+                            {perfil.username}
+                        </div>
 
-                    <div>
-                        {perfil.first_name} {perfil.last_name}
-                    </div>
+                        <div className="info-item">
+                            <span className="label">Nome completo:</span>
+                            {perfil.first_name} {perfil.last_name}
+                        </div>
 
-                    <div>
-                        {perfil.email}
+                        <div className="info-item">
+                            <span className="label">Email:</span>
+                            {perfil.email}
+                        </div>
                     </div>
                 </div>
 

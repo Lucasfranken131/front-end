@@ -1,7 +1,7 @@
 #book {
     display: flex;
     flex-direction: row;
-    margin-top: 10px;
+    margin-top: 100px;
 }
 
 .book-image {

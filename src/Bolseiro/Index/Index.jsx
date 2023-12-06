@@ -1,10 +1,16 @@
 import './index.css';
+import { useNavigate } from "react-router-dom";
 
 const Index = () => {
+
+    const navigate = useNavigate();
+
     return (
         <div>
             <div className="Nav-bar">
                 <div id="home">Bolseiro</div>
+                <div id="login-button"><button onClick={() => navigate("/login")}>Login</button></div>
+                <div id="cadastro-button"><button onClick={() => navigate("/cadastro")}>Cadastro</button></div>
             </div>
 
             <div id="intro">

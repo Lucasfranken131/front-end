@@ -39,12 +39,13 @@ const Nav = () => {
     }
 
     const sendHome = () => {
-        navigate("/home")
+        Cookies.remove("id");
+        navigate("/")
     }
 
     return(
         <div className="Nav-bar">
-            <div id="home" onClick={() => sendHome()}>Bolseiro</div>
+            <div id="home" onClick={() => navigate("/home")}>Bolseiro</div>
             <input type="text" id="search-bar" placeholder="Pesquise o livro que quiser"/>
             <button id="search-button">
                 <img src={Lupa} onClick={() => HandleClick(document.getElementById('search-bar').value)} alt="lupa" id="lupa"/>
@@ -52,6 +53,7 @@ const Nav = () => {
             <div onClick={() => navigate(`/perfil?user=${perfil.id_user}`)}>
                 <img src={perfil.profile_picture} id="profile-picture" alt="profile" />
             </div>
+            <div onClick={() => sendHome()} id="sair"><button>Sair</button></div>
         </div>
     )
 }
