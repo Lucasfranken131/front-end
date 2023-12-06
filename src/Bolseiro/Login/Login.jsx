@@ -13,13 +13,12 @@ function Login(){
             await axios.get(`http://localhost:3000/profile/login?username=${username}&password=${password}`)
             .then(res => {
                 const response = res.data;
-                const user = res.data[0];
+                const user = res.data;
                 const userId = user.id_user;
                 console.log("Usuário: ", user);
                 console.log("userId:", userId);
                 const now = new Date();
-                const expirationTime = new Date(now.getTime() + 60 * 60 * 1000);
-                console.log(Cookies.set("id", userId, { expires: expirationTime }));
+                console.log(Cookies.set("id", userId));
                 console.log(response);
                 navigate(`/home`);
             })

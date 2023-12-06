@@ -34,14 +34,13 @@ const Cadastro = () => {
         
         await axios.post('http://localhost:3000/profile/createUser', post_data)
         .then(res => {
-          console.log(res);
+          const response = res.data;
           const user = res.data;
           const userId = user.id_user;
-          const now = new Date();
-          const expirationTime = new Date(now.getTime() + 60 * 60 * 1000);
-          console.log(Cookies.set("id", userId, { expires: expirationTime }));
+          console.log(Cookies.set("id", userId));
+          console.log(response);
           navigate(`/home`);
-        });
+        })
       }
       catch(error) {
         console.log(error);
@@ -124,9 +123,11 @@ const Cadastro = () => {
         } 
         else {
           registrar(firstName, lastName, username, email, password);
-          console.log("Retornou true: ",errors);
-          navigate("/home");
-          return true;
+          setTimeout(() => {
+            console.log("Retornou true: ",errors);
+            navigate("/home");
+            return true;
+          }, "10000");
         }
       }
     return(

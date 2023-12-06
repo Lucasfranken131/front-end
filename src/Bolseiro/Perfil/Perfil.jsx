@@ -28,49 +28,27 @@ const Perfil = () => {
     return(
         <div>
             <Nav/>           
-            <div className="quadro">
-
                 <div id="perfil-container">
                     
                     <img id="perfil-img" src={perfil.profile_picture} alt="perfil" />
 
                     <div id="perfil-info" className="info">      
                         <div className="info-item">
-                            <span className="label">Username:</span>
+                            <span className="label">Username</span>
                             {perfil.username}
                         </div>
 
                         <div className="info-item">
-                            <span className="label">Nome completo:</span>
+                            <span className="label">Nome completo</span>
                             {perfil.first_name} {perfil.last_name}
                         </div>
 
                         <div className="info-item">
-                            <span className="label">Email:</span>
+                            <span className="label">Email</span>
                             {perfil.email}
                         </div>
                     </div>
                 </div>
-
-                <div className="grupo-campos">
-                    <div hidden={true}>
-                        Nome:
-                        <input type="text" id="Nome"/>
-                    </div>
-
-                    <div hidden={true}>
-                        Sobrenome:
-                        <input type="text" id="nome"/>
-                    </div>
-
-                    <div hidden={true}>
-                        Gênero:
-                        <input type="password" id="senha" />
-                    </div>
-
-                    <button type="submit" hidden={true}>Editar</button>
-                </div>
-            </div>
         </div>
     )
 }
