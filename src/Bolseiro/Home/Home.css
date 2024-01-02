@@ -1,0 +1,14 @@
+.books {
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+}
+
+.book {
+    background-color: rgb(238, 238, 238);
+    border-radius: 20px;
+    width: 300px;
+    padding: 5px;
+    margin-top: 50px;
+    margin-left: 25px;
+}

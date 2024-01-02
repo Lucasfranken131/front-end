@@ -1,0 +1,29 @@
+#perfil-container {
+    display: flex;
+    justify-content: center;
+    height: auto; /* Para centralizar verticalmente */
+    margin-top: 150px;
+}
+
+#perfil-img {
+    width: 120px;
+    height: 100px;
+    margin-left: 20px;
+}
+
+#perfil-info {
+    border: 2px solid grey;
+    border-radius: 30px;
+    padding: 20px;
+    width: 700px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.label {
+    color: gray;
+    display: block;
+    margin-bottom: 5px;
+    text-align: left;
+}

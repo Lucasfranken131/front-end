@@ -1,0 +1,17 @@
+#book {
+    display: flex;
+    flex-direction: row;
+    margin-top: 100px;
+}
+
+.book-image {
+    margin-left: 100px;
+}
+
+.book-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 50px;
+    margin-left: 150px;
+}

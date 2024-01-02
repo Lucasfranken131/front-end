@@ -1,0 +1,49 @@
+.Nav-bar {
+    display: flex;
+    flex-direction: row;
+    height: 60px;
+    background-color: #B85E5E;
+    align-items: center;
+    justify-content: center;
+}
+
+#search-bar {
+    height: 30px;
+    width: 400px;
+    text-align: center;
+    border: 1px solid black;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+#search-button {
+    border: 1px solid black;
+    height: 34px;
+    width: 45px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+#home {
+    font-size: 35px;
+    color: white;
+    padding-right: 20px;
+}
+
+#lupa {
+    width: 30px;
+    height: 30px; 
+}
+
+#profile-picture {
+    margin-left: 5px;
+    margin-top: 4px;
+    height: 30px;
+    width: 30px;
+    border: solid black 1px;
+    border-radius: 80px;
+}
+
+#sair {
+    margin-left: 10px;
+}

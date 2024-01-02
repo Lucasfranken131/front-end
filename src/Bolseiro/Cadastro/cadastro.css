@@ -1,0 +1,43 @@
+
+.background {
+    display: flex;
+    justify-content: center;
+}
+
+.cadastro {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+    height: 500px;
+    width: 400px;
+    border: #c46e6e 1px solid;
+    border-radius: 20px;
+    background-color: #d37777;
+}
+
+#submit {
+    width: 65px; 
+}
+
+#onclick-div {
+    color: white;
+}
+
+u {
+    color: rgb(38, 38, 199);
+}
+
+.Nav-bar {
+    display: flex;
+    flex-direction: row;
+    height: 80px; /* Ajuste a altura conforme necessário */
+    background-color: #B85E5E;
+    align-items: center;
+    position: fixed;
+    width: 100%; /* Ocupa toda a largura */
+    top: 0; /* Garante que a barra comece no topo da página */
+}
+
+/* Restante do seu CSS permanece inalterado */
